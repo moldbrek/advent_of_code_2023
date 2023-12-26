@@ -4,6 +4,10 @@ pub mod trebuchet;
 pub mod cube_conundrum;
 pub mod gear_ratios;
 pub mod scratchcards;
+pub mod food_production;
+pub mod boat_race;
+pub mod camel_cards;
+pub mod haunted_wasteland;
 
 pub(crate) fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<String> = std::env::args().collect();
@@ -14,6 +18,10 @@ pub(crate) fn main() -> Result<(), Box<dyn Error>> {
         2 => return cube_conundrum::run_day_2(path),
         3 => return gear_ratios::run_day_3(path),
         4 => return scratchcards::run_day_4(path),
+        5 => return food_production::run_day_5(path),
+        6 => return boat_race::run_day_6(path),
+        7 => return camel_cards::run_day_7(path),
+        8 => return haunted_wasteland::run_day_8(path), 
         _ => return Err(From::from(format!("Day {} not implemented", day))),
     };
 }
